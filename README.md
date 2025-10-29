@@ -15,7 +15,7 @@
 - Rakuten 店舗認証 & ログイン → 商品データ CSV ダウンロードを自動化
 
 ### python src/ra_odr_web.py
-- RRakuten 受注データの取得・CSVダウンロード 
+- Rakuten 店舗認証 & ログイン → 受注データ CSV ダウンロードを自動化
 
 ---
 
