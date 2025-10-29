@@ -14,6 +14,9 @@
 ### python src/ra_item_fl_dl_web.py
 - Rakuten 店舗認証 & ログイン → 商品データ CSV ダウンロードを自動化
 
+### python src/ra_odr_web.py
+- RRakuten 受注データの取得・CSVダウンロード 
+
 ---
 
 ## ディレクトリ構成（例）
@@ -25,6 +28,7 @@ python-selenium-automation/
 ├── requirements.txt
 ├── src/
 │ └── ra_item_fl_dl_web.py
+│ └── ra_odr_web.py 
 └── pyenv/
 └── .venv/
 ```
@@ -74,16 +78,28 @@ cp .env.sample .env
 3. スクリプト実行後は自動でログアウトされます
 4. ヘッドレスモードでの実行も可能（スクリプト内 options.add_argument("--headless=new") のコメントを解除）
 
+### python src/ra_odr_web.py
+1. python src/ra_odr_web.py を実行
+2. 昨日の受注データ CSV がプロジェクト直下にダウンロードされます
+3. スクリプト実行後は自動でログアウトされます
+4. 認証が必要な場合は、楽天受注用アカウントで自動ログインされます
+5. ヘッドレスモードでの実行も可能（スクリプト内 options.add_argument("--headless=new") のコメントを解除）
+
 ---
 
 ## 🔐 環境変数（.env）
 
 以下の環境変数（または .env ファイル）を設定してください
 ```bash
+# Rakuten 店舗ログイン情報
 RAKUTEN_NAME=your_rakuten_account
 RAKUTEN_PW=your_rakuten_password
 RAKUTEN_LOGIN_NAME=your_shop_login_email
 RAKUTEN_LOGIN_PASS=your_shop_login_password
+
+# Rakuten 受注データ用ログイン情報
+RAKUTEN_ORDER_NAME=your_rakuten_order_account
+RAKUTEN_ORDER_PASS=your_rakuten_order_password
 ```
 
 ### 注意事項
